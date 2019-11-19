@@ -1,0 +1,10 @@
+I will like to give credits to:
+
+Taylor Otwell: For creating Laravel
+Twitter Bootstrap
+Font Awesome: For creating the font awesome icon pack
+The Stack Overflow community: For answering most of my questions
+The Laracasts Community: For answering most of my questions
+Rashid Laaris: For creating the Laravel GUI Installer
+
+And finally to every PHP developer who has contributed one way or the other to the community.

@@ -1,0 +1,1246 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>BackLess Client | Docs </title>
+    <meta name="description" content="BackLess client document">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+
+
+    <!-- Left Panel -->
+
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu"
+                    aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <h3 class="navbar-brand"> Contents </h3>
+            </div>
+
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav sub-menu children">
+                    <h3 class="menu-title sub-menu children">A. Installation</h3><!-- /.menu-title -->
+                    <li><a href="#runninglocally">Running the app locally</a></li>
+                    <li><a href="#deploying">Deploying the app to the production server</a></li>
+                    </ol>
+                    </li>
+                    <h3 class="menu-title"><a href="#usingthegui">B. Using the GUI</h3>
+                    <li><a href="#login">Logging In</a></li>
+                    <li><a href="#createproject">Create a project</a></li>
+                    <li><a href="#datastore">Data Store</a></li>
+                    <li><a href="#dataindex">Data Index</a></li>
+                    <li><a href="#storage">Storage</a></li>
+                    <li><a href="#authorization">Authorization</a></li>
+                    <li><a href="#channels">Channels</a></li>
+
+                    <h3 class="menu-title"><a href="#thebacklessapi">The Backless API</h3>
+                    <li><a href="#creatinganewobject">Creating a new object</a></li>
+                    <li><a href="#retrievebyid">Retreiving an object by ID</a></li>
+                    <li><a href="#retrievebysearch">Retreiving an object by a search pattern</a></li>
+                    <li><a href="#getcount">Get the count (total) of all objects</a></li>
+                    <li><a href="#getcountsearch">Get the count of all objects that match a pattern</a></li>
+                    <li><a href="#selectspecific">Selecting a specific number of objects</a></li>
+                    <h3 class="menu-title"><a href="#manipulatedatastore">Manipulating the contents of the data store
+                    </h3>
+                    <li><a href="#replaceobject">Replacing objects</li>
+                    <li><a href="#updateobject">Updating objects</li>
+                    <li><a href="#deleteobject">Deleting objects</li>
+                        
+                    <h3 class="menu-title"><a href="#authorizationapi">Authorization</h3>
+                        <li><a href="#verifyauth">Verify Auth</li>
+                        
+                            <h3 class="menu-title"><a href="#storageapi">Storage</h3>
+                                <li><a href="#uploadingfile">Uploading a file</li>
+                                    <li><a href="#downloadfile">Download a file from storage</li>
+                            <h3 class="menu-title"><a href="#indexes">Indexes</h3>
+                            
+                                <h3 class="menu-title"><a href="#goingrealtime">Going Realtime</h3>
+                                    <li><a href="#channelsapi">Realtime Channels</li>
+                                        <li><a href="#gettingnotified">Getting Notified</li>
+                                            <li><a href="#realtimeds">Realtime with the data store</li>
+
+
+
+
+
+                    </ol>
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside><!-- /#left-panel -->
+
+    <!-- Left Panel -->
+
+    <!-- Right Panel -->
+
+    <div id="right-panel" class="container px-4">
+
+        <h2 class="center"><strong>BackLess</strong> documentation by FIBDev</h2>
+
+
+        <h2 id="installation"> <strong> A) Installation </strong> </h2>
+        <hr>
+        <div>
+            <h3 id="runninglocally"> Running the app locally </h3><br />
+            Before you can install this app locally, ensure you have the bellow installed on your machine:<br />
+            <div class="card">
+                <div class="card-body">
+
+                    1. A php server or software package e.g WAMP, XAMP, LAMP APACHE cli e.t.c<br />
+                    2. A database server or software package e.g WAMP, XAMP, WAMP ( for MySql), or the software that can
+                    serve the database you are using<br />
+                </div>
+            </div>
+
+        </div><br>
+        <div>
+            To configure the app, open the <code>.env </code> file at the root of the directory. The <code>.env</code> file
+            contains
+            all the environment variables required to set up the app. The <code>.env.example</code> has been included
+            in case
+            you want to revert to the default configuration.<br />
+            Since you will be running the app locally, all you need is the database setup. Backless uses the
+            configuration to connect to the database.<br /><br />
+
+            Create a database with the software you have e.g XAMPP, SequelPro. You need your access details to the
+            database as well as the database information.<br /><br />
+            <div class="alert alert-success">
+                Note: you can delete any variable that was set in the <code>.env</code> file that comes with the
+                installation.
+                Just clear the <code>.env</code> file and use the content of the <code>.env.example</code> file.<br />
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    Set the url of your app<br />
+
+                    <code>APP_URL=http://localhost</code><br />
+                    set the database details<br />
+                    <code>APP_NAME=BackLess </code> <br />
+                    <code>DB_CONNECTION: mysql</code> (If you are using mysql)<br />
+                    <code>DB_HOST: http://localhost</code><br />
+                    <code>DB_PORT: 3306</code> (The port the database is running)<br />
+                    <code>DB_DATABASE: mydatabase </code><br />
+                    <code>DB_USERNAME: rerunner</code><br />
+                    <code>DB_PASSWORD: secret</code><br />
+                    <code>BROADCAST_DRIVER:pusher</code> (Pusher provides the realtime funtionality for backless)
+                    <br /><br />
+                    We shall discuss the other fields when we reach their respective sections later in this
+                    documentation.
+                </div>
+            </div>
+        </div>
+        <div>
+            After the configuration, what is next is to serve your app. There are many ways users can serve their
+            php apps. If you are using a package like <strong>XAMPP</strong>, you have to get the extracted folder into
+            the htdocs
+            folder of xampp. Now start your php server from the XAMPP panel.
+            <br />
+            Every Laravel app is served from the <code>public</code> folder of the project. So in this case, from the
+            <code>public</code>
+            folder from the root directory of BackLess extraction folder. Which means that if you are using the Apache
+            package every url has to point to <code>public</code> folder of the apps root directory. So to access the
+            app from
+            the browser visit http://localhost/BackLess/public/.<br />
+            <br />
+            <div class="alert alert-warning">
+                PHP must be installed to be able to access it from the console.</div><br />
+            If you know how to use the terminal, every Laravel application comes with a light-weight server with which
+            you can
+            serve your app. You do not need any re-routing.<br />
+            Open your terminal and navigate to the root directory of Backless then enter:<br /><br />
+
+            <div class="card card-body ">
+                <code> $ php artisan serve</code><br />
+
+            </div>
+            <h3>Setting up the database</h3><br />
+            <div>
+                The easiest way to install the Backless is by using the installer that is bundled with Backless. It's easy
+                and straight foward.<br />
+                Navigate to <code>{APP_ROOT}/install</code> to start the installation process.<br /><br />
+                <img src="img/installerhome.png"><br /><br />
+                Ensure that all requirements are satisfied:<br /><br />
+                <img src="img/requirements.png"><br /><br />
+                Ensure that all permissions are enabled: <br /><br />
+                <img src="img/permissions.png"><br /><br />
+                Use the classic text editor to edit your <code>.env</code> file:<br /><br />
+                <img src="img/setenv.png"><br /><br />
+                Now click <strong>Save and Install</strong> to finisth the installation process.<br/><br/>
+                <div class = "alert alert-warning">
+                    If you have gone through the installation process and you want to go over it again, you have to delete
+                    the <code>install</code> file located in the <code>storage</code> folder of the Backless
+                    home directory. Then revisit the <code>/install</code> route of your installation.
+                </div>
+
+            </div>
+            <h3 id="deploying">Deploying the app to the production server</h3>
+            <hr>
+            <div>
+                <div>
+                    Although BackLess ships with a GUI installer that only requires you to click and click until everything is
+                    set up.
+                    However, you are required to have some manual setup before you can run a successful installation.
+                </div>
+                <div>
+                    Acquire a domain name. Be sure to point it the <code>public</code> folder of the apps location. For
+                    instance, assuming you have extracted the app to a server with ip <code>10.34.45.2</code>, then the url
+                    (www.myurl.com) that you purchased should be pointed to <code> 10.34.45.2/public/ </code> and NOT to
+                    <code>
+                        10.34.45.2</code> as this will expose all the files at the root of your domain which is a
+                    dangerous
+                    move.
+                </div>
+                <div>
+                    To setup your database, use the MySql database wizard that comes with cpanel (if you are
+                    setting
+                    it up with cpanel). Create a [DataBase and a User] using PHPMyAdmin database setup that comes with
+                    cpanel. Assign the user to the database you created but be sure to allow all previledges. Note down
+                    the
+                    username and the password as you will need them for your installation. Also make sure you know the
+                    url
+                    and the port of the database. You can get these information by checking the database info with
+                    PHPMyAdmin.<br />
+                    Now visit you domain at <code>www.myurl.com/install</code> to run the installation wizard. Then follow the steps
+                    explained in the previous section.
+                </div>
+                <div>
+                    <br /><br />
+                    <h2 id="usingthegui"> <strong>The interface </strong> </h2>
+                    <hr><br />
+
+                    <h3 id="login"> Logging In </h3><br />
+                    <div>
+                        After a successful installation, the next step is to log in. Accounts can be created as users
+                        from the signup page.
+                        To login as a user, navigate to <code>/signup</code> and create a new user account then proceed to the
+                        next sections in this
+                        documentation.<br /><br />
+
+                        After a fresh installation, BackLess creates a
+                        default admin account. Log in to this account using the following credentials:<br /><br />
+                        <div class="card card-body">
+                            <code> email: admin@backless.test </code>
+                            <br />
+                            <code> Password: password@001 </code>
+                        </div>
+                        <br />
+                        <div>
+                            From there, you can do account adminstration, create plans, suspend accounts and so on. It's really straight foward so play around
+                            with the
+                            environment. Be sure to change the default details to your preferred details for security
+                            reasons.
+                        </div>
+                        
+                    </div>
+                    <div>
+                    </div><br />
+                    <h3 id="createproject"><strong>Create a project</strong></h3><br />
+                    <div>
+                        When you login to as a user, you see a pretty much empty panel. Go ahead and create a new app -
+                        <i>My First BackLess App </i>
+                        Now click on your project card to explore it.
+                    </div><br />
+
+                    <h3 id="datastore"><strong>Data store</strong></h3><br />
+
+                    <div>
+
+                        You can easily create data without the need for schema declaration.<br />
+                        To access the data store from the web interface, click on the "All Data" option menu
+                        from the <i>Infrastructure->Data Store</i>option menu Click on the "New" button and enter what
+                        you wish to
+                        store in <strong> JSON </strong>format.<br /><br />
+                        <div class="alert alert-warning">
+                            <i class="fa fa-exclamation"></i> It is important that your data be in JSON format before it
+                            can be stored.
+                            A correct data format is: <code>{"name":"Ethan", "surname":"Tju"}</code>
+                        </div>
+                        Next, fill in the optional State Event Change field. BackLess declares all data objects as
+                        <em>non-broadcasting</em> except if
+                        explicitly declared by the user. The field contains the channel on which to broadcast any
+                        changes to the
+                        object and the specific
+                        event to trigger. We will cover events and broadcasting shortly, you can leave that field for
+                        now.<br />
+                        <br />An example is provided for you:<br /><br />
+                        <img src="img/create_new_data.png">
+
+
+                    </div><br />
+                    <h3 id="dataindex"> <strong> Data Index </strong> </h3><br />
+                    <div>
+                        Indexes are ways by which you can easily access any resource (storage assets or data objects)
+                        while
+                        abstracting the details. We will get back to that shortly because we need the knowledge of
+                        somethings
+                        we have not yet mentioned.
+                    </div> <br />
+
+
+                    <h3 id="storage"> <strong> Storage </strong> </h3><br />
+
+
+
+                    <div>
+                        <strong>Storage</strong> provides you with a simple abstract file system from which you can
+                        access your
+                        cloud storage assets even if they are distributed on different hosts.<br /><br />
+                        The purpose of this is to provide you with a way to upload and download files from and to your
+                        apps without worrying
+                        about manually writing the upload and download code. So your apps can now use lots of assets
+                        (image, files etc.) which are store on the cloud.<br /><br />
+                        To make use of this feature, we need to go back to our <code>.env</code> file to make some
+                        changes.<br /><br />
+                        BackLess provides three (3) ways to cloud storage: Dropbox API, AWS S3 buckets and local
+                        storage. To make use of any of these, you need to
+                        create an account on either Dropbox or either S3 because you'll need an access token to proceed.
+                        Local
+                        Storage is just your production server, assets are stored in a folder with the name format
+                        <em>[APP_NAME]_users</em> located in the <code>storage/app</code> directory where [APP_NAME] is
+                        the value for the APP_NAME envrionment variable you declared in your <code>.env</code> file
+                        earlier.<br /><br />
+                        <br />
+                        To use Dropbox, you need to create dropbox app. Create an account on <a
+                            href="https://www.dropbox.com">Dropbox</a>. Now visit
+                        <a href="https://www.dropbox.com/developers/apps">the developer console</a>. Then click
+                        <strong>Create app</strong> button.<br />
+
+                        Choose the <strong>Dropbox API </strong> option - then choose either you want a full access or a
+                        specific folder.
+                        Give your app a name and click <strong>Create app </strong>.<br />
+                        Note your <code>App key</code> and click <strong>show</strong> to show
+                        the<code> App secret, then note it</code>.
+                        Now generate your access token, then note it.
+                        <br /><br />
+                        <img src="img/generatedropboxkeys.png"><br /><br />
+                        Now use them in your <code>.env</code> file <br /><br />
+
+
+                        <div class="card card-body">
+                            <strong>Using Dropbox</strong>
+                            <code>DROPBOX_APP_SECRET:</code> (Enter your secret string here)
+                            <code>DROPBOX_TOKEN:  </code> (Your token goes here)
+                            <code>DROPBOX_ACCESS_TOKEN:</code> (Then your token)
+                            <code>DB_PASSWORD: secret</code>
+                        </div><br /><br />
+
+
+                        Now that we have setup our preferred upload method, the next step is to make use of the virtual
+                        directory structure provided.
+                        Click on the <strong>Storage</strong> menu item on the side bar. This takes you to the root
+                        folder of your filesystem.<br />
+                        You have the option to create files and folders. When you upload a file, the file is stored in
+                        the current directory and when you delete a folder,
+                        every child (files and subfolders) are deleted as well this is similar to how you would have it
+                        on your computer operating system
+                        except that no real folders or subfolders are created at the destination, it's just for you to
+                        be able to group files.<br /><br />
+                    </div>
+
+
+                    <h3 id="authorization"> <strong> Authorization (Auth) </strong> </h3><br />
+                    <div>
+                        The Auth functions of BackLess enalbes you to grant access rights to the assets and data store
+                        objects if you are for instance building a
+                        multi-user application. This function can only be accessed through the API and we shall see how
+                        we can make use of it shortly.
+                    </div><br />
+
+
+                    <h3 id="channels"> <strong>Channels</strong> </h3><br />
+                    <div>
+                        A <strong>channel</strong> is simply a medium of communication. It is often used in the context
+                        of realtime applications as a medium
+                        of sending data in realtime between two entities through a network. When a channel is created,
+                        several clients can
+                        listen on that channel. Data is been passed accross a channel through a unique label called an
+                        <strong>event</strong>. Whenever a client
+                        wants to send a message, the message is labelled as part of an event so that only those that are
+                        listening for that even on
+                        that channel can recieve the message. Realtime events for BackLess is provided by <strong>Pusher
+                            Realtime Services</strong>, a leading provider of realtime
+                        services for developers. But it has
+                        been abstraced so that you can easily fire/trigger events from any point in your app. <br />
+                        Realtime channels are used in two ways in BackLess; to notify of any change in a registered data
+                        object and to send data in
+                        realtime within your project. We shall see how to use this beautiful feature. You are going to
+                        enjoy it.
+                    </div> <br /><br />
+                    <h2 id="thebacklessapi"><strong> B. The BackLess API</strong></h2><br />
+
+                    <div>
+                        The REST API endpoints are mediums through which your remote projects can utilise the above
+                        stated functionalities. Whether you are building
+                        a web application or a mobile application, REST endpoints are the ways to use backless.
+                    </div><br />
+
+                    <div>
+                        <h4 id="createnewobject">I. Creating a new data object </h4></br>
+                        <div>
+                            As mentioned earlier, the data store is just an abstraction of the database so that you can
+                            have
+                            seamless access to your data without the need for repeated queries or worrying about
+                            database integration.
+                            Query builders, data indexes, realtime events are all provided out-of-the-box.
+                        </div><br />
+                        <div class="card">
+                            <div class="card-body">Endpoint:<code>/api/projects/{project_id}/data/new </code>
+                                <div class="badge badge-primary">POST</div>
+                                <br /> Parameter(s): 1. <code>content</code>
+                                <div class="badge badge-primary">JSON</div>(mandatory)
+                                2. <code>listener</code>
+                                <div class="badge badge-primary">String</div>(optional)
+                                <br /> Headers: <code>Authorization</code>
+                                <div class="badge badge-primary">Token</div><br />
+                                <br />Response: <div class="badge badge-primary">JSON</div><br /><br />
+
+                                The <code>{project_id}</code> wildcard is the id of the project. This can be gotten from
+                                the your user
+                                panel home.</br />
+                                A POST request is sent to the stated url with the at least one parameter. The
+                                <code>content</code> paremeter
+                                is a json string of the data you want to create. The <code>listener</code> parameter is
+                                again the channel on which
+                                you want to publish any change in this object. We shall get there is further
+                                sections.<br />
+                                A typical example url is <code>/api/projects/1264/data/new</code>. The example below
+                                shows how to make request
+                                using javascript and how to handle the response.<br />
+                                <img src="img/create_new_data_object.png"><br /><br />
+                                The example uses the famous JQuery library to make a POST request. Observe that there is
+                                a header
+                                variable called Authorization, and this is your authorization token. You can get it at
+                                the request auth page
+                                on your user home panel. The content of the authorization token is preceeded with the
+                                <em>Bearer</em> as you can
+                                see in the example above.
+                                Also observe the content parameter was sent a JSON is string format, this is very
+                                crucial.<br />
+                                The response to this request is the ID of the newly created object which can be
+                                retrieved from the callback of your POST request.
+                            </div>
+                        </div>
+                        <div class="alert alert-warning">You must make sure that the <code>content</code> Parameter
+                            is of the type JSON. This can be achieved by serialsing the JSON value into a string. See
+                            the example below.
+                        </div><br />
+
+                    </div>
+                    <h3 id="retrievebyid"> Retrieving an object by its ID</h3><br />
+
+                    <div>
+                        You can retrieve an object if you know its ID. Remember that when you create an new object, if
+                        the request was
+                        as success, the sever will return the ID of the object you just created. This object can then be
+                        retrieved with
+                        the ID.<br />
+                        All you need to do is to make a GET request to the appropriate endpoint as describe below. The
+                        <code>{data_id}</code> wildcard is the id of the object you want to retrieve.
+                    </div><br />
+                    <div class="card">
+                        <div class="card-body">
+                            <div>Endpoint: <code>/api/projects{project_id}/data/{data_id}</code>
+                                <div class="badge badge-primary">GET</div>
+                            </div>
+                            <br />Headers: <code>Authorization</code>
+                            <div class="badge badge-primary">Token</div>
+                            <br />Response: <div class="badge badge-primary">JSON</div><br /><br />
+                            <img src="img/requestdatabyid.png"><br /><br />
+
+
+                            <div> If the request was a success, it will return a json object.
+                                The JSON object is the content of the data object you requested. As you can see in the
+                                example above,
+                                we just make direct reference to the attribute(s) of the object of the <code>data</code>
+                                variable without needing
+                                to decode the response.
+
+                            </div>
+
+                            <br />
+
+                        </div>
+                    </div>
+
+
+                    <h3 id="retrievebysearch">Retrieve an object by a search pattern</h3><br />
+
+                    <div>
+                        You don't have to get the objects you don't need as this will be an extra overhead especially
+                        when the Objects
+                        are many. You can instead make request for only objects that follow a certain pattern. See the
+                        example below.<br />
+                        <br />
+                        <strong>Let's assume I wish to get the email of students who are male (leaving out their names,
+                            address etc.)</strong>.
+                        All I need is a way to state that I only need those students with <code>gender</code> attribute
+                        set to <code>male</code> and
+                        also state that I only want the <code>email</code>, not all the attributes of the objects. See
+                        the example below:<br />
+                        <br /><img src="img/getbypatterns.png"><br /><br />
+                        <div>
+                            As you can see, the request takes two mandatory parameters; <code>constraints</code> and
+                            <code>get</code>.
+                            The <code>constraints</code> parameter constains the search pattern to which the data
+                            objects should be matched.<br />
+                            In the example above, the value for the <code>constraints</code> parameter is
+                            <code>"person_type=student,gender=male"</code>.
+                            The attribute-value pair is separated by a <em>'='</em> and NOT a colon. These pairs are now
+                            seperated with the logical
+                            seperator <em>','</em> for AND and <em>'|'</em> for the OR operator.
+                            This means we are saying <i>...where person_type is student AND gender is male give me the
+                                email</i>.<br />
+                            You can also decide to be get more then one attributes. For instance if we want their emails
+                            and phone numbers,
+                            the <code>get</code> parameter will now be <code>email,phone_number</code> and so on.
+                            However, if we want all the
+                            attributes, then the <code>get</code> parameter should simply be set to <code>*</code> to
+                            denote <i>all</i>.
+                        </div>
+                        The desciption of of these operations are provided below<br />
+                        <div class="card">
+                            <div class="card-body">
+                                <div>Endpoint: <code>/api/projects{project_id}/data/search</code>
+                                    <div class="badge badge-primary">GET</div>
+                                </div>
+                                <div><strong>Paramerters</strong>:
+                                    <ol class="px-4">
+                                        <li><i>constraints</i>: The search pattern e.g <code>title=Mr|title=Miss</code>
+                                            (no spaces)</li>
+                                        <li><i>get</i>: The attribute of each objects to get e.g
+                                            <code>firstname,lastname,grade</code> or
+                                            <code>*</code> for all available attributes. Also, no spaces.</li>
+                                    </ol>
+                                </div>
+                                <div>Header(s): Authorization <div class="badge badge-primary">Token</div>
+                                </div></br>
+                                Response: <div class="badge badge-primary">JSON</div> An array of objects that satisfy
+                                these conditions.<br /> In the example above, for each object, we have it's
+                                corresponding <code>get</code>
+                                attribute and its ID. If the <code>get</code> parameter was set to <code>*</code>, then
+                                each result object
+                                will contain two attributes - <code>content</code>, a JSON formatted string which will
+                                need
+                                further parsing and <code>id</code> the ID of the object.
+                                <br />
+                            </div>
+                        </div>
+
+                        <div class="alert alert-warning">
+                            It should be noted that if there exists an object without a attribute specified even if it
+                            satisfies
+                            the constraint, nothing about that object will be returned.
+                        </div>
+                    </div>
+
+
+                    <h3 id="getcount">Get the count (total) of all objects</h3><br />
+                    <div class="card">
+                        <div class="card-body">
+                            <div>Endpoint: <code>/api/projects/{id}/data/count</code>
+                                <div class="badge badge-primary">GET</div>
+                            </div>
+                            <div>Headers: <code>Authorization</code>
+                                <div class="badge badge-primary">Token</div>
+                            </div>
+                            <div>Response:<div class="badge badge-primary">integer</div> The total data objects for that
+                                project
+                                with the {id} specified in the endpoint's url.</div>
+                        </div>
+                    </div>
+
+
+                    <h3 id="getcountsearch">Get the count (total) of all records that match a pattern</h3><br />
+                    <div class="card">
+                        <div class="card-body">
+                            Assuming you want to get the total number of female students from the Mathematics department
+                            or other
+                            similar tasks, this can be very useful.
+                            <div>Endpoint: <code>/api/projects/{id}/data/search/count</code>
+                                <div class="badge badge-primary">GET</div>
+                            </div>
+                            <div>Parameters: <code>constraint</code> The search pattern</div>
+                            <div>Headers: <code>Authorization</code>
+                                <div class="badge badge-primary">Token</div>
+                            </div>
+                            <div>Response:<div class="badge badge-primary">Integer</div> The total number of data
+                                objects that match the specified pattern.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <h3 id="selectspecific">Selecting a specific number of objects</h3><br />
+                    <div>
+                        You might need just an a number of objects from the response of a request. You can achieve this
+                        in Backless and the
+                        procedure is similar to the previous example, all you need to change is the URL.
+                        <br /> <br />
+                        <h4></h4>
+                        <div class="card">
+                            <div class="card-body">
+                                <div>Endpoint: <code>/api/projects/{id}/data/search/fixed/{length}</code>
+                                    <div class="badge badge-primary">GET</div>
+                                </div>
+                                <div>Parameters: 1. <code>constraint</code>, the search pattern. 2. <code>get</code>,
+                                    the attribute(s) you wish to retrieve</div>
+                                <div>Headers: <code>Authorization</code>
+                                    <div class="badge badge-primary">Token</div>
+                                </div>
+                                <div>Response:<div class="badge badge-primary">JSON</div>, An array of JSON object that
+                                    match the specified pattern
+                                    whose size is the value of the wildcard <code>{length}</code> in the URL string. If
+                                    the total number of objects
+                                    is less than <code>{length}</code>, then all the objects are returned.
+                                </div><br />
+                            </div>
+                        </div>
+
+                        <h4>Select a number of objects without a search pattern</h4><br />
+                        <div class="card">
+                            <div class="card-body">
+                                <div>Endpoint: <code>/api/projects/{id}/data/fixed/{size}</code>
+                                    <div class="badge badge-primary">GET</div>
+                                </div>
+                                <i>The {size} wildcard is the number of records of the data you want to get</i>
+                                <div>Parameters: <code>constraint</code> The search pattern</div>
+                                <div>Headers: <code>Authorization</code>
+                                    <div class="badge badge-primary">Token</div>
+                                </div>
+                                <div>Response:<div class="badge badge-primary">integer</div> The total data objects for
+                                    that satisfy that constraint
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+
+                        <div class="alert alert-success">
+                            When using getting just a fixed amount of records, you can specify an optional wildcard
+                            value which
+                            is the order you want for example: <code>.../data/fixed/5/desc</code>
+                            will order the objects in descending order of their IDs i.e descending order of entry into
+                            the datastore
+                        </div>
+
+                        <div class="alert alert-success">
+                            You can get also get the most recents object from the data store
+                            by using: <code>.../data/latest</code>
+                        </div>
+
+
+                    </div>
+
+
+                    <h2 id="manipulatedatastore"><strong>. Manipulating the contents of the data store</strong> </h2>
+                    <br />
+                    <div>
+                        This section deals with methods by which you can use to make changes to the data store
+                    </div><br />
+
+
+                    <h3 id="replaceobject">Replacing objects</h3>
+                    <div><br />
+
+                        <div>
+                            Replacing an object means removing the object completely and inserting a new one at that
+                            same
+                            location of removal. This means that the new object will have the same ID of the previous
+                            object.<br />
+                            To achieve this, you have to send the new object (in JSON string) to the endpoint.
+                        </div><br />
+                        <div class="card">
+                            <div class="card-body">
+                                <div>Endpoint: <code>/api/projects/{id}/data/{data_id}/replace</code>
+                                    <div class="badge badge-primary">POST</div>
+                                </div>
+
+                                <div>Parameters: <code>content</code> The new object to replace the existing one</div>
+                                <div>Headers: <code>Authorization</code>
+                                    <div class="badge badge-primary">Token</div>
+                                </div>
+                                <br />
+                                <img src="img/replaceobject.png">
+
+
+                            </div><br />
+                        </div>
+
+                        <h3 id="updateobject">Updating objects</h3><br />
+                        <div>
+                            You don't always want to completely replace an object with another, rather you might just
+                            want to make changes to some of its
+                            attrubutes. You can set the attrubutes of an exiting object either by using search pattern
+                            of by using its ID.<br /><br />
+
+                            <div class="card">
+                                <div class="card-body">
+                                    <div>Endpoint: <code>/api/projects/{id}/data/{data_id}/update</code>
+                                        <div class="badge badge-primary">POST</div>
+                                    </div>
+
+                                    <div>Parameters: <code>set</code> - The attributes to be updated and its new value.
+                                        More than one attributes are seperated by ',' (coma) e.g
+                                        <code>level=4,rank=16,year=2020</code> and so on.
+                                    </div>
+                                    <div>Headers: <code>Authorization</code>
+                                        <div class="badge badge-primary">Token</div>
+                                    </div>
+                                    <br />
+                                    <img src="img/updateobject.png">
+                                    <br /><br />
+
+                                    <div class="alert alert-success">
+                                        When you update an object by setting values for attributes that do not exist,
+                                        those attributes
+                                        will be added to the object.
+                                    </div>
+
+
+                                </div><br />
+                            </div>
+                            <br />
+                            <h4>Updating objects with search pattens</h4><br />
+
+                            <div class="card">
+                                <div class="card-body">
+                                    <div>Endpoint: <code>/api/projects/{id}/data/search/update</code>
+                                        <div class="badge badge-primary">POST</div>
+                                    </div>
+
+                                    <div>Parameters: 1. <code>constraints</code> - The search pattern. 2.
+                                        <code>set</code> - The attributes to be updated and its new value.
+                                        More than one attributes are seperated by ',' (coma) e.g
+                                        <code>level=4,rank=16,year=2020</code> and so on.
+                                    </div>
+                                    <div>Headers: <code>Authorization</code>
+                                        <div class="badge badge-primary">Token</div>
+                                    </div>
+                                    <br />
+
+
+
+                                </div><br />
+                            </div>
+
+
+                        </div><br />
+
+                        <h3 id="deleteobject"><strong>Deleting objects</strong></h3><br />
+                        You can delete an object either by its ID, or by using search patterns as discussed
+                        earlier.<br /><br />
+                        <div class="card">
+                            <div class="card-body">
+                                <div>Endpoint: <code>/api/projects/{id}/data/{data_id}/delete</code>
+                                    <div class="badge badge-primary">POST</div>
+                                </div>
+                                <div>Headers: <code>Authorization</code>
+                                    <div class="badge badge-primary">Token</div>
+                                </div>
+                                <br />
+
+                            </div><br />
+                        </div><br />
+                        <h4>Deleting using search patterns</h4><br />
+                        <div class="card">
+                            <div class="card-body">
+                                <div>Endpoint: <code>/api/projects/{id}/data/search/delete</code>
+                                    <div class="badge badge-primary">POST</div>
+                                </div>
+
+                                <div>Parameters: <code>constraints</code> - The search patterns.
+
+                                </div>
+                                <div>Headers: <code>Authorization</code>
+                                    <div class="badge badge-primary">Token</div>
+                                </div>
+                                <br />
+
+
+
+                            </div><br />
+                        </div>
+
+                    </div>
+
+                    <div>
+
+                    </div>
+
+                    <h3 id="authorizationapi"><strong> Authorization </strong></h3><br />
+                    <div>
+                        Authorization is simply a way of making sure of authorized access to your projects. For
+                        instance, if you want only registered users
+                        of your app to view a specific data update, then you need a way of verifying that the user is
+                        valid.
+                        While it can be argued that using smart querying like we have seen above, you can determine
+                        users that have
+                        already registered, it should be noted that using REST API means that you expose your endpoints.
+                        This works perfectly well
+                        if you are building for a mobile or a desktop environment where the code is usually hidden, but
+                        with web apps, if your endpoints are not
+                        protected, they can easily be unconvered.<br />
+                        Backless provides authorization for both you and your users as we will see shortly.<br /><br />
+                        So the idea behind authorization is to enable users to have access to resources using some
+                        string or secret key that
+                        is only known to them. Moreover, you might also want to be able to automatically identify these
+                        users uniquely.
+                        The secret key in this case is usually your password and the unique string can be either email
+                        or username or handle etc.
+                        <br /><br />
+                        To create a new user auth record, say with username and password, you need to specify three
+                        mandatory parameters -
+                        The attribue you want to encrypt (this serves as the password), the unique attribute that can't
+                        be duplicated (this, the username)
+                        and the auth data itself.<br />
+                        <br />Lets see an example: I want to create a signup record for a new user: <br /><br />
+                        <div class="card">
+                            <div class="card-body">
+                                <div>Endpoint: <code>/api/projects/{id}/auths/create</code>
+                                    <div class="badge badge-primary">POST</div>
+                                </div>
+
+                                <div>Parameters: 1. <code>data</code>
+                                    <div class="badge badge-primary">JSON</div> - The authorization details.
+                                    2. <code>unique</code>
+                                    <div class="badge badge-primary">String</div> - The unique attribute that can't be
+                                    shared with any other auth user.
+                                    3. <code>encrypt</code>
+                                    <div class="badge badge-primary">String</div> - The attribue of the
+                                    <code>data</code> object
+                                    that is used as the password or the user's access key.
+
+                                </div>
+                                <div>Headers: <code>Authorization</code>
+                                    <div class="badge badge-primary">Token</div>
+                                </div>
+                                <br />
+                                <img src="img/createauth.png">
+                                <br /><br />
+                                The <code>password</code> field of the <code>data</code> parameter is encrypted when
+                                stored in the database.
+
+
+                            </div><br />
+                        </div>
+
+
+                    </div>
+                    <h3 id="verifyauth"> Verify Auth </h3><br />
+                    You can check whether or not a user is authorized by verifying their auths details. To achieve this,
+                    you need to accept the auth details of the user (similar to logging in). This details are looked up
+                    and a success message is returned if the user is authorized, otherwise an error is returned which
+                    denotes
+                    that such detail does not exist. <br /><br />Lets see an example - I want to see if a user with
+                    <code>username</code> - <i>@simgy</i>
+                    and <code>password</code> - <i>foldablesandwich293</i> exists as an authed user.<br /><br />
+
+                    <div class="card">
+                        <div class="card-body">
+                            <div>Endpoint: <code>/api/projects/{id}/auths/verify</code>
+                                <div class="badge badge-primary">POST</div>
+                            </div>
+
+                            <div>Parameters:1. <code>credentials</code>
+                                <div class="badge badge-primary">String</div> - The attribute-value pairs that you wish
+                                to
+                                check for e.g <code>"email=formidabledot@gmail.com,username=uncooked54"</code>
+                                2. <code>encrypted</code>
+                                <div class="badge badge-primary">String</div> - The attribute of the auth object that is
+                                currently
+                                encrypted as the password e.g <code>"password=frogmatchNu"</code>
+
+                            </div>
+                            <div>Headers: <code>Authorization</code>
+                                <div class="badge badge-primary">Token</div>
+                            </div>
+                            <br />
+                            <img src="img/verifyauth.png">
+                            <br /><br />
+                            The <code>password</code> field of the <code>data</code> parameter is encrypted when stored
+                            in the database.
+
+
+                        </div><br />
+                    </div>
+
+                    <h2 id="storageapi"><strong>Storage</strong> </h2><br />
+                    As we have seen a few sections ago that Backless provides a virtual file system to manage assets and
+                    these assets (files)
+                    can either be stored remotely on DropBox and Amazon S3 or locally on the server. Whichever is the
+                    case, assets are
+                    accessed the same way. In fact, when an asset is been retrieved from the cloud, it is made to look
+                    as though you are
+                    actually getting it from your server. The file is served virtually from your server with your
+                    server's url.<br />
+                    <br />
+                    <h3 id="uploadingfile">Uploading a file</h3><br />
+                    Remember that whether you are uploading or downloading a file, the <code>STORAGE_METHOD</code>
+                    environment variable in
+                    your <code>.env</code> file determines where a file will be uploaded to or downloaded from whenever
+                    either or these actions is invoked.
+                    Use the values <code>local</code> to store uploaded files on your server, <code>dropbox</code> to
+                    use Dropbox or
+                    <code>s3</code> to use Amazon S3 as the storage method. Only one value can be set. If none is set,
+                    your server is used.
+                    <br /><br />
+                    <div class="card">
+                        <div class="card-body">
+                            <div>Endpoint: <code>/api/projects/{id}/storage/new</code>
+                                <div class="badge badge-primary">POST</div>
+                            </div>
+
+                            <div>Parameters: 1. <code>file</code>
+                                <div class="badge badge-primary">File Object</div> - The file in its mime form
+                                2. <code>path</code>
+                                <div class="badge badge-primary">String</div> - The virtual directory you want to store
+                                the file in. If not
+                                specified, the file is stored in the root directory.
+
+                            </div>
+                            <div>Headers: <code>Authorization</code>
+                                <div class="badge badge-primary">Token</div>
+                            </div><br />See the following example<br />
+                            <br />
+                            <img src="img/uploadfile.png">
+                            <br /><br />
+                            In the example above, the request parameters are stored in an object of
+                            <code>FormData</code>. The <code>file</code>
+                            object is simply an object of HTML file input element. The function is called only when a
+                            file has been choosen. The
+                            <code>path</code> parameter is an optional string that tells which path to store the file in
+                            the virtual directory structure. However,
+                            the path must exist otherwise the file will not be saved. <br />
+                            This request return an object that contains the <code>file_token</code> attribute. This
+                            token is the unique string with
+                            which you can use to access the file (download and delete).
+
+
+                        </div><br />
+                    </div>
+                    <br />
+
+                    <h3 id="downloadfile">Download a file from storage</h4><br />
+                        <div>
+                            To download a file, all you need to do is to send a GET request without any other special
+                            parameter.<br />
+                            <br /><br />
+                            <div class="card">
+                                <div class="card-body">
+                                    <div>Endpoint: <code>/api/projects/{id}/storage/{file_token}</code>
+                                        <div class="badge badge-primary">GET</div>
+                                        <br />The <code>{file_token}</code> wildcard is the file token that was returned
+                                        when the file was created. You can also
+                                        get the file token of any file from the graphical interface from the storage
+                                        page.
+                                    </div>
+
+
+                                    <div>Headers: <code>Authorization</code>
+                                        <div class="badge badge-primary">Token</div>
+                                    </div><br />
+
+                                    When the request is complete, the result is a stream from which you can download the
+                                    file.<br />
+                                    You might just want to stream the file without downloading. For instance an image
+                                    does'nt always
+                                    need to be downloaded. You can archieve this by using the endpoint -
+                                    <code>/api/public/streams/{file_token}</code>
+                                    Note: The stream assets is not protected by auth token so it is similar sharing a
+                                    file publically.
+                                    <br /><br />
+                                    Similary, you can delete an asset through the endpoint
+                                    <code>...storage/delete/{file_token}</code>
+
+                                </div><br />
+                            </div>
+
+
+                        </div>
+
+
+                        <h2 id="indexes">Indexes</h2><br />
+                        <div>
+
+                            Indexes enable you access data objects and assets using friendly names you assigned to them.
+                            They also
+                            enable you to protect your objects and assets by wrapping them around an auth flag so that
+                            only authorized
+                            users have access to them. Assuming I have a data object say ID 43 and it contains todays
+                            news feed and I
+                            only want only signedup users to have access to it, I can achieve this by making use of
+                            <i>auth</i> details.
+                            This makes sure that any request for the object contains the correct <i>auth</i> details of
+                            a valid user.<br />
+                            <br />
+                            Go to the <i>Data Indexes</i> option menu item from your project panel of the
+                            <i>Datastore</i> option menu.
+                            Now click on <i>New</i>. A form will appear which contains the fields for setting the new
+                            index.<br /><br />
+
+                            Name: The name of the index. This is a simple name want to map with. So let me say -
+                            <i>secret_data</i><br />
+                            Map Type: Now state whether you want to map to a data store object or to a file. Let me
+                            choose data.<br />
+                            Object ID: Now enter the ID of the object (if it's an object e.g 14) or the file token of
+                            the file (if it's a file)<br />
+                            Authorise: Check this if you want only authorised access to the map. Let me check mine
+                            <br /><br />
+                            <div class="card">
+                                <div class="card-body">
+                                    Now lets access our index. What we want to do send a POST request to
+                                    <code>api/projects/{id}/indexes/{index_name}</code>
+                                    <br />
+                                    First, lets try to access this resource without any auth credentials:- <br />
+                                    <img src="img/indexnoauth.png"><br /><br />
+                                    This will return an error with a status code of <code>HTTP 401</code> which means
+                                    <code>Unauthorized</code>.
+                                    This implies that we will always need to provide our auth credentials similar to the
+                                    way we used <code>verify_auth</code> earlier.
+                                    <br /><br />
+                                    Now lets try the same example but including a valid set of auth credentials.<br />
+                                    <img src="img/indexwithauth.png"><br /><br />
+                                    This should now return the value object at ID 14. The same is for storage assets
+                                    except that the file is returned as a stream.
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <h2 id="goingrealtime">Going Realtime</h2><br />
+                        <h3 id="channelsapi">Reatime Channels</h3><br />
+                        <div>
+                            As we have explained earlier that a channel in the context of realtime apps is a medium for
+                            sending data within
+                            entities. In Backless, the realtime funtionality is implemented with <strong>Pusher</strong>
+                            which means you
+                            must have a pusher account. Other than that, you don't need anything else.<br />
+                            Visit <a href="https://www.pusher.com">Pusher's website</a> and create an account. In your
+                            dashboard, create a new
+                            channel app.<br /><br />
+                            <img src="img/createchannelapp.png"><br /><br />
+                            Now navigate to the <i>App Keys</i> tab of your new channel app's panel and note these
+                            keys.<br /><br />
+                            <img src="img/appkeys.png"><br /><br />
+                            Now go to your <code>.env</code> file to set the environment variables needed by
+                            Pusher<br /><br />
+                            <div class="card">
+                                <div class="card-body">
+                                    <code>PUSHER_APP_ID</code> = {Your pusher app id}<br />
+                                    <code>PUSHER_APP_KEY</code> = {Your Pusher app key}<br />
+                                    <code>PUSHER_APP_SECRET</code> = {Your Pusher app secret}<br />
+                                    <code>PUSHER_APP_CLUSTER</code> = {Your Pusher app cluster}<br />
+                                </div>
+                            </div>
+                            <br />
+                            Now that you have set your variables, lets explain the channel concept.<br />
+                            You create a channel to serve as a medium of passing data objects and firing events.
+                            When an event occurs (maybe the value of a variable in now greater that 0) you make a
+                            request to fire an event
+                            accross a channel. When the event is fired, other entities (web apps or mobile apps or PC
+                            apps) that are listening on
+                            than channel for That event get notified (without them having to always check for the value
+                            themselves, which consume resources). In fact, when
+                            you fire an event, you can acompany it with some data. So when an entity receives
+                            notification of an event, it can
+                            also receive the data associated with it.<br /><br />
+                            Lets take an example. Assuming I want to create a chating app with Backless and I want it in
+                            such a way that when an
+                            a new message arrives, other users of the app will get the message without having to poll
+                            the server at an interval.
+                            I can approach this by firing an event (say <i>'new-message'</i>) on a channel (say
+                            <i>messaging-channel</i>) anytime
+                            a user sends a message.<br /><br />
+                            A payload is an object that is sent with an event. A message can be a payload. For this
+                            example, when I trigger an
+                            event, I will send the message as a payload so that the user can get it instancly without
+                            polling the server repeatedly.
+                            <br /><br />
+                            <img src="img/messagepane.png"><br /><br />
+                            So I have created a text field and a <i>Send</i> button so that when I click the <i>Send</i>
+                            button, an event will be fired
+                            notifying every subscriber as well as delivering the message sent as a payload. To achieve
+                            this, I need to create a channel
+                            from the <i>Services/channels</i> option menu from my project's panel.<br />
+                            Now create a new channel and give it a meaningful description. For me -
+                            <code>Channel Name</code> = <i>'messaging-channel'</i>,
+                            <code>Desciption</code> = <i>'a channel to demonstrate simple realtime
+                                messaging'</i>.<br /><br />
+                            <strong>Remember our workflow</strong>;<br />
+                            1. We want to fire an event (the <i>new-message</i> event) on this channel anytime we send a
+                            message. We'll
+                            also send the message as a payload object.<br />
+                            2. Other entities/clients will listen for this even on this channel and when the even occurs
+                            they extract the message
+                            from the payload.<br />
+                            3. They display the message.<br /><br />
+
+                            To fire an event, we need to send a POST request to Backless, a complete description of the
+                            endpoint is given below:<br /><br />
+
+                            <div class="card">
+                                <div class="card-body">
+                                    Endpoint:<code>api/projects/{id}/channels/{channel}/trigger/{event}</code>
+                                    <div class="badge badge-primary">POST</div>
+                                    <br /> Parameter(s): 1. <code>payload</code>
+                                    <div class="badge badge-primary">JSON</div>(mandatory)
+                                    <br /> Headers: <code>Authorization</code>
+                                    <div class="badge badge-primary">Token</div><br />
+                                    <br />
+                                    The code for our example:<br />
+                                    <img src="img/fireevent.png"><br /><br />
+                                    You see, firing an even is very easy. Notice that the payload parameter is a json
+                                    object with the
+                                    <code>message</code> attribute so it means you can also add more attributes, perhaps
+                                    the username of the
+                                    sender, be creative.<br />
+                                    Now the message has been sent how do we receive it?
+                                </div>
+
+
+                            </div>
+
+                            <h3 id="gettingnotified"> Getting Notified </h3><br />
+                            <div>
+
+                                In the previous section, we saw how to send messages through the channels we create.
+                                This section explains
+                                how to recieve these messages.<br />
+
+                                Pusher provides client-side libraries to receive event notifications. So depending on
+                                the environment you are
+                                developing for, you can still benefit from this feature by using the appropriate library
+                                for your client
+                                environment be it a web app, a mobile app, a desktop app etc.<br />
+                                This example uses the web library for the web specifically the Javascript library. When
+                                you create a new channel app from your Pusher dashboard, you can visit the <i>Getting
+                                    Started</i>
+                                tab to see how to make use of the library you chose.<br /><br />
+                                From the <i>Getting Started</i> tab, I will copy the snippet provided for the Javascript
+                                client<br />
+                                <br />
+                                <img src="img/copysnippet.png"><br /><br />
+                                Now I will change the code to listen on my channel and then display the
+                                message<br /><br />
+                                <img src="img/listenonchannel.png">
+                                <br /><br />
+                                Now lets give our app a spin<br><br />
+                                Type a message:
+                                <img src="img/typemessage.png"><br /><br />
+                                The receiver receives it!:
+                                <img src="img/messagealert.png"><br /><br />
+                                An that's how you go realtime in Backless.
+                                <div><br />
+
+                                    <h3 id="realtimewithds"> Realtime with the data store </h3><br />
+                                    <div>
+                                        With Backless, not only can you fire realtime events, you can also listen for
+                                        events when data changes in your
+                                        data store without having to poll the server at time intervals.<br />
+
+                                        When you created a new object, you remember that there was a
+                                        <code>listener</code> option you could fill. Well
+                                        this option is actually the coordinate of the event that should be fired when
+                                        data changes. When you add a listener
+                                        to any object in your datastore, an event is fired when there is a change in the
+                                        data object on which you added the listener.
+                                        Backless provides you with a simple method that can enable you to in fact listen
+                                        for changes on every data in your data store.
+                                        Without you having to create seperate channels for seperate object.<br />
+                                        If I were to set the <code>listener</code> option of my object to say -
+                                        <code>data-changes.important_change</code>,
+                                        then this means that when there is a change in that object, the change should be
+                                        published through the <i>data-changes</i>
+                                        channel and should fire an <i>important_change</i> event on that channel.
+                                        Additionally, Backless automatically publishes the
+                                        new data object as an attribute of a payload called <code>data</code>. The
+                                        payload has two attributes:<br />
+                                        1. <code>id</code>: The ID of the object that changed.<br />
+                                        2. <code>data</code>: The new value of the object.<br />
+                                        <br />
+                                        Lets create an example. We will create a data object that has an attribute
+                                        <code>traffic_status</code>, the
+                                        status of the traffic at Mokola Highway, Ibadan. Then we will
+                                        create a Pusher client that will listen for changes and when a change occurs it
+                                        will display the current traffic status at
+                                        Mokola Highway overwriting the previoud values, to give a dynamic content
+                                        display.<br />
+
+                                        <img src="img/createmokolaobject.png"><br /><br />
+                                        Now lets modify our client code to display the current traffic status.<br />
+                                        <img src="img/createtextpane.png"><br /><br />
+                                        <img src="img/recievetrafficupdates.png"><br /><br />
+                                        <div class="alert alert-warning">
+                                            Remember, we need to create the <i>traffic</i> channel in our <i>Realtime
+                                                Channels</i> page for this to work.
+                                        </div><br />
+
+                                        Now open explore the data object by clicking the <i>change</i> action link for
+                                        our object at the <i> DataStore/All Data </i>
+                                        option menu item. Next change the value of the <code>traffic_status</code>
+                                        attribute to something maybe <i>"Congested</i>.<br />
+                                        <br />
+                                        <img src="img/changetocongested.png"><br />
+                                        Now click save and then navigate to the client app to see what happens<br />
+                                        <img src="img/clientupdated.png"><br /><br />
+
+                                        We can also do this from the API. In fact, we do not need to change anything.
+                                        Anytime we change (update, replace or append)
+                                        an object that is been listened for, the same will happen.<br /><br />
+                                        Remember, by extrating the <code>id</code> value of the object, we can get the
+                                        ID of the data object that changed.<br />
+                                        <br />
+                                        Note: Deleting an object does not trigger any event.<br />
+
+                                        Try doing this from the API, you'll see that the same happens.
+
+                                    </div>
+
+                                </div>
+
+                                <hr />
+
+                                <br /><br />
+                                <div style="color:green">Thanks for following this doc. If you think this project can be useful
+                                to anyone else, please do well to contribute and redistribute.<br />
+
+                                <div class="append-bottom alt large pull-right"><strong>FIBDev</strong></div>
+                                <br /><br />
+
+                            </div>
+
+                        </div>
+
+
+                </div> <!-- .content -->
+
+            </div><!-- /#right-panel -->
+
+            <!-- Right Panel -->
+
+
+            <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>
